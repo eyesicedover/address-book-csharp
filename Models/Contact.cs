@@ -19,44 +19,59 @@ namespace AddressBook.Models
             _instances.Add(this);
         }
 
-        private void SetName(string newName)
+        public void SetName(string newName)
         {
             _name = newName;
         }
 
-        private string GetName()
+        public string GetName()
         {
             return _name;
         }
 
-        private void SetPhoneNumber(string newPhone)
+        public void SetPhoneNumber(string newPhone)
         {
             _phoneNumber = newPhone;
         }
 
-        private string GetPhoneNumber()
+        public string GetPhoneNumber()
         {
             return _phoneNumber;
         }
 
-        private void SetAddress(string newAddress)
+        public void SetAddress(string newAddress)
         {
             _address = newAddress;
         }
 
-        private string GetAddress()
+        public string GetAddress()
         {
             return _address;
         }
 
-        private void SetId(int newId)
+        public void SetId(int newId)
         {
             _id = newId;
         }
 
-        private string GetId()
+        public int GetId()
         {
             return _id;
+        }
+
+        public static List<Contact> GetAll()
+        {
+          return _instances;
+        }
+
+        public static Contact FindById(int searchId)
+        {
+            return _instances[searchId-1];
+        }
+
+        public static void ClearAllContacts()
+        {
+            _instances.Clear();
         }
     }
 }
